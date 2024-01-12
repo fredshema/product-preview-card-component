@@ -1,0 +1,207 @@
+:root {
+  --mobile: 375px;
+  --desktop: 1440px;
+  --dark-gray-blue: hsl(228, 12%, 48%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-cyan: hsl(158, 36%, 37%);
+  --very-dark-cyan: hsl(160, 71%, 16%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+  --font-size: 14px;
+  --font-family: "Montserrat", sans-serif;
+  --serif-font-family: "Fraunces", serif;
+  --font-weight: 500;
+  --font-weight-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cream);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  color: var(--dark-gray-blue);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.col {
+  flex: 1;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+  max-width: 550px;
+  background-color: transparent;
+  border-radius: 10px;
+  margin: 2rem 0;
+  overflow: hidden;
+  align-items: start;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  /* max-height: 300px; */
+}
+
+.product-image{
+    display: flex;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.product-description {
+  padding: 1.5rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: var(--white);
+}
+
+.product-description .small-header {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--dark-gray-blue);
+  letter-spacing: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.product-description .product-name {
+  display: block;
+  font-size: 2rem;
+  font-family: var(--serif-font-family);
+  font-weight: var(--font-weight-bold);
+  color: var(--very-dark-blue);
+  margin-bottom: 0.5rem;
+}
+
+.product-description .text {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: var(--dark-gray-blue);
+  margin-bottom: 1.5rem;
+}
+
+.product-description .product-price {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--dark-cyan);
+  margin-bottom: 1.5rem;
+}
+
+.product-description .product-price .current {
+  font-family: var(--serif-font-family);
+}
+
+.product-description .product-price .previous {
+  text-decoration: line-through;
+  color: var(--dark-gray-blue);
+  font-weight: var(--font-weight);
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+
+.product-description .btn {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-family);
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+}
+
+.product-description .btn:hover {
+  background-color: var(--very-dark-cyan);
+}
+
+.product-description .btn .icon img {
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: auto;
+}
+
+
+/* Media Queries */
+@media (max-width: 620px) {
+    .container {
+        padding: 1rem;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        max-width: 100%;
+    }
+    .product-image img {
+        border-radius: 0;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        max-height: 300px;
+    }
+    .product-description {
+        border-radius: 0;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .product-description .product-name {
+        font-size: 1.5rem;
+    }
+    .product-description .product-price {
+        margin-bottom: 1rem;
+    }
+    .product-description .btn {
+        margin-bottom: 1rem;
+    }
+    .product-description .btn .icon img {
+        width: 0.75rem;
+    }
+}
